@@ -2,9 +2,9 @@
   "name": "server",
   "version": "1.0.0",
   "main": "index.js",
-"scripts": {
-  "dev": "nodemon index.js"
-},
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^7.0.2",
     "@mui/material": "^7.0.2",
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
