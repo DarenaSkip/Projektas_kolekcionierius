@@ -1,54 +1,33 @@
-// export default function LoginPage() {
-//     return <div>Login Page</div>;
-//   }
-  
-import { Box, Button, Container, TextField, Typography } from '@mui/material'
+import React, { useState } from 'react';
+import LoginForm from '../components/LoginForm';
+import RegisterForm from '../components/RegisterForm';
+import '../styles/LoginPage.css';
 
-export default function LoginPage() {
+const LoginPage = () => {
+  const [isRegistering, setIsRegistering] = useState(false);
+
+  const handleSwitchForm = () => {
+    setIsRegistering(!isRegistering);
+  };
+
   return (
-    <Container maxWidth="xs">
-      <Box
-        sx={{
-          marginTop: 8,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
-        <Typography component="h1" variant="h5">
-          Prisijungimas
-        </Typography>
-        <Box component="form" noValidate sx={{ mt: 1 }}>
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="El. paštas"
-            name="email"
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Slaptažodis"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-          >
-            Prisijungti
-          </Button>
-        </Box>
-      </Box>
-    </Container>
-  )
-}
+    <div className="page-container">
+      <div className="left-side">
+        <h1 className="title">FILATELIJA</h1>
+        <h1 className="title">NUMIZMATIKA</h1>
+        <h1 className="title">ANTIKVARAS</h1>
+      </div>
+      <div className="right-side">
+        <div className="form-container">
+          {isRegistering ? (
+            <RegisterForm handleSwitchForm={handleSwitchForm} />
+          ) : (
+            <LoginForm handleSwitchForm={handleSwitchForm} />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default LoginPage;
