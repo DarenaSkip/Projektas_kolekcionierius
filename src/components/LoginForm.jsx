@@ -7,7 +7,7 @@ const LoginForm = ({ handleSwitchForm }) => {
       <Typography variant="h5" align="center">Prisijungimas</Typography>
       <TextField label="Vartotojo vardas" variant="outlined" required fullWidth />
       <TextField label="Slaptažodis" variant="outlined" type="password" required fullWidth />
-      <Button variant="contained" color="success" fullWidth>Prisijungti</Button>
+      <Button type="submit" variant="contained" color="success" fullWidth>Prisijungti</Button>
       <Typography align="center" sx={{ mt: 1 }}>
         <a href="#">Pamiršai slaptažodį?</a>
       </Typography>
